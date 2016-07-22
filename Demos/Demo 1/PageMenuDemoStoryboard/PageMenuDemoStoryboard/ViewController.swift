@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+//        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
         
@@ -53,8 +53,8 @@ class ViewController: UIViewController {
             .SelectionIndicatorColor(UIColor.orangeColor()),
             .BottomMenuHairlineColor(UIColor(red: 70.0/255.0, green: 70.0/255.0, blue: 80.0/255.0, alpha: 1.0)),
             .MenuItemFont(UIFont(name: "HelveticaNeue", size: 13.0)!),
-            .MenuHeight(40.0),
-            .MenuItemWidth(90.0),
+            .MenuHeight(50.0),
+            .MenuItemWidth(70.0),
             .CenterMenuItems(true)
         ]
         

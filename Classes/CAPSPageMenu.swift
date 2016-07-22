@@ -30,10 +30,11 @@ class MenuItemView: UIView {
     // MARK: - Menu item view
     
     var titleLabel : UILabel?
+    var iconImageView : UIImageView?
     var menuItemSeparator : UIView?
     
     func setUpMenuItemView(menuItemWidth: CGFloat, menuScrollViewHeight: CGFloat, indicatorHeight: CGFloat, separatorPercentageHeight: CGFloat, separatorWidth: CGFloat, separatorRoundEdges: Bool, menuItemSeparatorColor: UIColor) {
-        titleLabel = UILabel(frame: CGRectMake(0.0, 0.0, menuItemWidth, menuScrollViewHeight - indicatorHeight))
+        titleLabel = UILabel(frame: CGRectMake(0.0, 20.0, menuItemWidth, menuScrollViewHeight - indicatorHeight))
         
         menuItemSeparator = UIView(frame: CGRectMake(menuItemWidth - (separatorWidth / 2), floor(menuScrollViewHeight * ((1.0 - separatorPercentageHeight) / 2.0)), separatorWidth, floor(menuScrollViewHeight * separatorPercentageHeight)))
         menuItemSeparator!.backgroundColor = menuItemSeparatorColor
@@ -41,14 +42,15 @@ class MenuItemView: UIView {
         if separatorRoundEdges {
             menuItemSeparator!.layer.cornerRadius = menuItemSeparator!.frame.width / 2
         }
-        
+        iconImageView = UIImageView(image: UIImage(named: "linkedin-icon"))
+        iconImageView!.frame = CGRect(x: 20, y: 0, width: 35, height: 35)
         menuItemSeparator!.hidden = true
         self.addSubview(menuItemSeparator!)
-        
+        self.addSubview(iconImageView!)
         self.addSubview(titleLabel!)
     }
     
-    func setTitleText(text: NSString) {
+    func titleLabel(text: NSString) {
         if titleLabel != nil {
             titleLabel!.text = text as String
             titleLabel!.numberOfLines = 0
